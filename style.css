@@ -1,0 +1,55 @@
+.cream {
+    color: #EBE4D1
+}
+
+.gray {
+    color: #B4B4B3
+}
+
+.navy {
+    color: #26577c
+}
+
+.orange {
+    color: #e55604
+}
+
+body {
+    margin: 0px;
+    background-color: #EBE4D1;
+    text-align: center;
+}
+
+header {
+    background-color: #B4B4B3;
+}
+
+.profile-image {
+    margin-top: 10%;
+    margin-bottom: 1%;
+    border-radius: 15%;
+    max-width: 15%;
+}
+
+.desc {
+    text-align: center;
+    max-width: 50%;
+    margin: auto;
+}
+
+kbd.blue {
+    background-color: #26577c;
+}
+
+kbd.blue:hover {
+    background-color: #e55604;
+}
+
+kbd.orange{
+    background-color: #e55604;
+    color: white;
+}
+
+kbd.orange:hover {
+    background-color: #26577c;
+}
