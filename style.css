@@ -20,13 +20,9 @@ body {
     text-align: center;
 }
 
-header {
-    background-color: #B4B4B3;
-}
-
 .profile-image {
-    margin-top: 10%;
-    margin-bottom: 1%;
+    margin-top: 5%;
+    margin-bottom: 1.5%;
     border-radius: 15%;
     max-width: 15%;
 }
@@ -52,4 +48,28 @@ kbd.orange{
 
 kbd.orange:hover {
     background-color: #26577c;
+}
+
+header {
+    background-color: transparent;
+}
+
+h3 {
+    display: inline-block;
+    padding: 5px;
+    background-color: transparent;
+}
+
+a {
+    color: #B4B4B3;
+}
+
+a:hover {
+    color: #26577c;
+    text-decoration: none;
+}
+
+a.current:hover {
+    color: #e55604;
+    text-decoration: none;
 }
