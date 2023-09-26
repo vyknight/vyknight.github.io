@@ -48,7 +48,7 @@
       <div class="col-md-10 col-md-offset-1">
         <div class="box projectDescription">
           <p>PokerGPT is a LLM powered poker coach, our goal is make poker coaching accessible and affordable for everyone.</p>
-          <p>Without divulging too many details, this project uses React with NextJS on the frontend, Sass and a headless component library for styling, Prisma ORM for accessing our PostgreSQL database, and a FastAPI backend.</p>
+          <p>Since this project is very experimental, I can't go into all the details. But I'm able to divulge that this project uses React with NextJS on the frontend, Sass and a headless component library for styling, Prisma ORM for accessing our PostgreSQL database, and a FastAPI backend.</p>
           <p>I helped to draft the architecture, and as the main backend developer I'm responsible for running AI experiments.</p>
         </div>
       </div>
@@ -64,12 +64,46 @@
           <p>Earth is an all-in-one platform for running hackathons, its goals are to address the shortcomings we find in popular hackathon mangement software such as Agorize.</p>
           <p>Our tech stack consists of TypeScript, React, NextJS, a CSS component library, and a PostgreSQL database.</p>
           <p>I own the judging and user directory feature, and I'm typically the first person people reach out to when they have questions regarding API and database access. Over my internship I've implemented pagination, connection pooling, and fuzzy search. I'm also the primary driver for our adoption of Prisma ORM.</p>
-          <p>Although Earth have not yet been fully released, it was widely appraised when we beta'd the program during the French multinational Capgemini's internal GenAI Hackathon. During which it was used by 1062 participants world wide.</p>
+          <p>Although Earth have not yet been fully released, it was widely appraised when we beta'd the program during the French multinational Capgemini's internal GenAI Hackathon. During which it was used by 1062 participants world</p>
         </div>
       </div>
     </div>
   </div>
-</body>    
 
+  <!-- NFT Trading Project -->
+  <div class="row">
+    <button data-toggle="collapse" data-target="#nft" class="projectButton">ASCII Art Trader</button>
+    <div id="nft" class="container collapse">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="box projectDescription">
+          <p>In my first software engineering course our project was an ASCII art trading hub. It was during the time when NFTs were still a hot commodity, and we decided to make a mini version of OpenSeas</p>
+          <p>Our techstack consists almost entirely of Java, with persistent storage handled by a MongoDB database. We also attempted to port the program to Android</p>
+          <p>We were graded on how closely we followed best software engineering principles like SOLID and clean architecture. 
+            But our goal with the project was to create a living system or game in which users can submit (mint) ASCII art they've found on the internet that wasn't yet present in the system, the art then could be traded with other players.
+            There was also supposed to be a "house" player in which the game system itself will purchase and sell art at certain intervals to discreetly manipulate the market.</p>
+          <p>I was the team lead, my responsibilities consists of drafting the architecture and delegating team members onto tasks. Not to say that I was just managing, I wrote most of the code for wallets and trading, as well as all the documentation.</p>
+          <a href="https://github.com/vyknight/CSC207-TradingProject-">Link to the repo</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- Twitter Covid Analysis -->
+  <div class="row">
+    <button data-toggle="collapse" data-target="#twitterCovid" class="projectButton">Twitter Covid Sentiment Analyzer</button>
+    <div id="twitterCovid" class="container collapse">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="box projectDescription">
+          <p>This project seeks to analyze what topics around Covid suffers the most sensationalism</p>
+          <p>This project is my first university CS project, as such it uses Python exclusively with a few libraries for scraping, data analysis, and data visualization</p>
+          <p>I was mostly responsible for scraping the data to be analyzed, I was able to come up with a script to download tens of thousands of tweets at a time into a CSV file, filterable by keywords or region</p>
+          <p>The scraped data is then scored using the Natural Language Tool Kit, and then graphed with plotly and pandas.</p>
+          <a href="https://github.com/vyknight/TwitterCovidAnalysis">Link to the repo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body> 
+<footer></footer>   
 </html>

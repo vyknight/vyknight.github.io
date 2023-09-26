@@ -81,7 +81,7 @@ a.current:hover {
 }
 
 .projectButton {
-    background-color: #26577c;
+    background-color: #e55604;
     border: none;
     border-radius: 5px;
     width: 40%;
@@ -95,7 +95,7 @@ a.current:hover {
 }
 
 button:hover {
-    background-color: #e55604;
+    background-color: #26577c;
 }
 
 #projectPageDescription {
@@ -104,7 +104,7 @@ button:hover {
 
 .projectDescription {
     font-size: 17px;
-    background-color: white;
+    /* background-color: white; */
     border: none;
     border-radius: 5px;
     padding: 10px;
@@ -116,4 +116,8 @@ button:hover {
 
 p {
     font-family: Helvetica, Arial, sans-serif
+}
+
+footer {
+    min-height: 100px;
 }
