@@ -3,7 +3,7 @@
 }
 
 .gray {
-    color: #B4B4B3
+    color: #858585
 }
 
 .navy {
@@ -12,6 +12,10 @@
 
 .orange {
     color: #e55604
+}
+
+.black {
+    color: rgb(97, 95, 95);
 }
 
 body {
@@ -58,10 +62,12 @@ h3 {
     display: inline-block;
     padding: 5px;
     background-color: transparent;
+    margin-left: 2%;
+    margin-right: 2%;
 }
 
 a {
-    color: #B4B4B3;
+    color: #858585;
 }
 
 a:hover {
@@ -72,4 +78,42 @@ a:hover {
 a.current:hover {
     color: #e55604;
     text-decoration: none;
+}
+
+.projectButton {
+    background-color: #26577c;
+    border: none;
+    border-radius: 5px;
+    width: 40%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 20px;
+    margin-bottom: 1.5%;
+    margin-top: 1.5%;
+}
+
+button:hover {
+    background-color: #e55604;
+}
+
+#projectPageDescription {
+    margin-bottom: 30px;
+}
+
+.projectDescription {
+    font-size: 17px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.box {
+    text-align: center;
+}
+
+p {
+    font-family: Helvetica, Arial, sans-serif
 }

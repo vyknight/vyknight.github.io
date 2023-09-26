@@ -25,7 +25,50 @@
     </nav>
   </header>
 <body>
-    <p>hi this is projects</p>
+  <h2 id="projectPageDescription"><small class="black">The following are some of my favourite projects that I've worked on. Click on the buttons to expand them.</small></h2>
+
+  <!-- Portfolio Website -->
+  <div class="row">
+    <button data-toggle="collapse" data-target="#portfolioWebsite" class="projectButton">This Website</button>
+    <div id="portfolioWebsite" class="container collapse">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="box projectDescription">
+          <p>This website is made using only HTML and CSS with Bootstrap. It's currently hosted on Github Pages for free.</p>
+          <p>I chose not to use any JavaScript frameworks, or JavaScript at all because I think that would be over-engineering for a simple portfolio site such as this, which has 4 pages, some text, and a picture of me.</p>
+          <p>This is the first time I've taken a website from design to deployment entirely on my own. Not the worst eh?</p>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+  <!-- PokerGPT -->
+  <div class="row">
+    <button data-toggle="collapse" data-target="#pokergpt" class="projectButton">PokerGPT</button>
+    <div id="pokergpt" class="container collapse">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="box projectDescription">
+          <p>PokerGPT is a LLM powered poker coach, our goal is make poker coaching accessible and affordable for everyone.</p>
+          <p>Without divulging too many details, this project uses React with NextJS on the frontend, Sass and a headless component library for styling, Prisma ORM for accessing our PostgreSQL database, and a FastAPI backend.</p>
+          <p>I helped to draft the architecture, and as the main backend developer I'm responsible for running AI experiments.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Earth -->
+  <div class="row">
+    <button data-toggle="collapse" data-target="#earth" class="projectButton">Earth</button>
+    <div id="earth" class="container collapse">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="box projectDescription">
+          <p>Earth is an all-in-one platform for running hackathons, its goals are to address the shortcomings we find in popular hackathon mangement software such as Agorize.</p>
+          <p>Our tech stack consists of TypeScript, React, NextJS, a CSS component library, and a PostgreSQL database.</p>
+          <p>I own the judging and user directory feature, and I'm typically the first person people reach out to when they have questions regarding API and database access. Over my internship I've implemented pagination, connection pooling, and fuzzy search. I'm also the primary driver for our adoption of Prisma ORM.</p>
+          <p>Although Earth have not yet been fully released, it was widely appraised when we beta'd the program during the French multinational Capgemini's internal GenAI Hackathon. During which it was used by 1062 participants world wide.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>    
 
 
