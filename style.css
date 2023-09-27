@@ -67,11 +67,11 @@ h3 {
 }
 
 a {
-    color: #bac9aa;
+    color: #9EB384;
 }
 
 a:hover {
-    color: #9EB384;
+    color: #52792e;
     text-decoration: none;
 }
 
@@ -120,4 +120,17 @@ p {
 
 footer {
     min-height: 100px;
+}
+
+.bi {
+    width: 4rem;
+    height: 4rem;
+    fill: #9EB384;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-top: 5rem;
+}
+
+.bi:hover {
+    fill: #435334;
 }
