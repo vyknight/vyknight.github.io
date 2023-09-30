@@ -134,3 +134,27 @@ footer {
 .bi:hover {
     fill: #435334;
 }
+
+.si {
+    width: 8rem;
+    height: 8rem;
+    fill: #9EB384;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-top: 3rem;
+}
+
+.si:hover {
+    fill: #435334;
+}
+
+/* Sub skill icon */
+.ssi {  
+    width: 5rem;
+    height: 5rem;
+    fill: #9EB384;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    color: #9EB384;
+}
