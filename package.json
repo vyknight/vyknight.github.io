@@ -18,5 +18,8 @@
   },
   "engines": {
     "node": ">=18.13"
+  },
+  "dependencies": {
+    "scanlined": "^1.0.0"
   }
 }
