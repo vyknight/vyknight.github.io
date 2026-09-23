@@ -4,10 +4,30 @@
 
 	let wordmarkReady = false;
 	let wordmarkElement: HTMLHeadingElement;
+	let socialLinkElements: HTMLAnchorElement[] = [];
+	let headerElement: HTMLElement;
+	let sidebarTop = 0;
+
+	onMount(() => {
+		const updateHeaderPosition = () => {
+			sidebarTop = Math.max(0, headerElement.getBoundingClientRect().bottom);
+		};
+		const observer = new ResizeObserver(updateHeaderPosition);
+
+		observer.observe(headerElement);
+		window.addEventListener('scroll', updateHeaderPosition, { passive: true });
+		updateHeaderPosition();
+
+		return () => {
+			observer.disconnect();
+			window.removeEventListener('scroll', updateHeaderPosition);
+		};
+	});
 
 	onMount(() => {
 		let destroyed = false;
 		let cleanup: (() => void) | undefined;
+		let revealTimer: number | undefined;
 
 		void (async () => {
 			try {
@@ -17,11 +37,29 @@
 			}
 
 			try {
+				const { createScanlined } = await import('scanlined');
 				const { scanline } = await import('scanlined/svelte');
 
 				if (!destroyed) {
-					cleanup = scanline(wordmarkElement, wordmark).destroy;
+					const instance = await createScanlined(wordmarkElement, {
+						text: wordmarkElement.textContent ?? '',
+						...wordmark,
+						trigger: 'manual'
+					});
+					if (destroyed) {
+						instance.destroy();
+						return;
+					}
+
+					const socialActions = socialLinkElements.map((element) =>
+						scanline(element, socialScanline)
+					);
+					cleanup = () => {
+						instance.destroy();
+						socialActions.forEach((action) => action.destroy());
+					};
 					wordmarkReady = true;
+					revealTimer = window.setTimeout(() => instance.reveal(), 750);
 				}
 			} catch {
 				// Keep the readable text fallback when enhancement is unavailable.
@@ -30,6 +68,7 @@
 
 		return () => {
 			destroyed = true;
+			if (revealTimer) window.clearTimeout(revealTimer);
 			cleanup?.();
 		};
 	});
@@ -40,7 +79,7 @@
 		pixelHeight: 136,
 		color: '#0f62fe',
 		glyphSpacing: 0,
-		trigger: 'viewport',
+		trigger: 'manual',
 		raster: {
 			resolution: 13,
 			threshold: 0.5,
@@ -51,6 +90,28 @@
 			stagger: 0,
 			direction: 'sweep-right',
 			sweepScope: 'glyph'
+		}
+	} satisfies ScanlineActionOptions;
+
+	const socialScanline = {
+		font: 'IBM Plex Mono',
+		fontWeight: 700,
+		pixelHeight: 22,
+		color: '#000',
+		glyphSpacing: 0,
+		trigger: 'hover',
+		hoverHold: true,
+		mode: 'cover',
+		raster: {
+			resolution: 5,
+			threshold: 0.5,
+			blockFit: 'advance'
+		},
+		animation: {
+			duration: 360,
+			stagger: 20,
+			direction: 'sweep-right',
+			sweepScope: 'line'
 		}
 	} satisfies ScanlineActionOptions;
 
@@ -97,11 +158,37 @@
 	/>
 </svelte:head>
 
-<div class="site-shell">
-	<header class="site-header">
-		<h1 class:wordmark-loading={!wordmarkReady} class="wordmark" bind:this={wordmarkElement}>
-			刘ZEKUN
-		</h1>
+<div
+	class="site-shell"
+	style={`--sidebar-top: ${sidebarTop}px`}
+>
+	<header class="site-header" bind:this={headerElement}>
+		<div class="header-content">
+			<h1 class:wordmark-loading={!wordmarkReady} class="wordmark" bind:this={wordmarkElement}>
+				刘ZEKUN
+			</h1>
+
+			<nav class="social-links" aria-label="Social profiles">
+				<a
+					class="social-link"
+					href="https://www.linkedin.com/in/matthewzekunliu/"
+					rel="noreferrer"
+					target="_blank"
+					bind:this={socialLinkElements[0]}
+				>
+					LinkedIn
+				</a>
+				<a
+					class="social-link"
+					href="https://github.com/vyknight"
+					rel="noreferrer"
+					target="_blank"
+					bind:this={socialLinkElements[1]}
+				>
+					GitHub
+				</a>
+			</nav>
+		</div>
 	</header>
 
 	<div class="layout">
@@ -213,6 +300,7 @@
 
 	:global(html) {
 		scroll-behavior: smooth;
+		overscroll-behavior: none;
 	}
 
 	:global(body) {
@@ -236,8 +324,15 @@
 	}
 
 	.site-header {
-		padding: clamp(1.5rem, 3vw, 2.5rem) 1.25rem 0;
+		padding: clamp(1rem, 2vw, 1.625rem) clamp(1.75rem, 3vw, 3rem) 0 1.25rem;
 		border-bottom: 1px solid #000;
+	}
+
+	.header-content {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
 	}
 
 	.section-heading,
@@ -266,9 +361,9 @@
 
 	.wordmark {
 		display: block;
-		width: min(33.333vw, 100%);
+		width: min(25vw, 100%);
 		max-width: 100%;
-		margin: 0 0 clamp(1.5rem, 3vw, 2.5rem);
+		margin: 0 0 clamp(1rem, 2vw, 1.625rem);
 		color: #0f62fe;
 		font-size: 1px;
 		line-height: 0;
@@ -279,6 +374,41 @@
 		width: 100%;
 		max-width: 100%;
 		height: auto;
+	}
+
+	.social-links {
+		display: grid;
+		align-self: stretch;
+		align-items: flex-end;
+		grid-template-rows: 1fr auto 1fr auto 1fr;
+		margin-bottom: clamp(1rem, 2vw, 1.625rem);
+	}
+
+	.social-link:first-child {
+		grid-row: 2;
+	}
+
+	.social-link:last-child {
+		grid-row: 4;
+	}
+
+	.social-link {
+		display: block;
+		color: #000;
+		font-size: 20px;
+		line-height: 0;
+		text-decoration: none;
+	}
+
+	.social-link :global(svg) {
+		display: block;
+		width: auto;
+		height: clamp(1rem, 1.7vw, 1.35rem);
+	}
+
+	.social-link:focus-visible {
+		outline: 2px solid #0f62fe;
+		outline-offset: 3px;
 	}
 
 	.wordmark-loading {
@@ -295,11 +425,20 @@
 
 	.sidebar {
 		display: flex;
+		position: fixed;
+		top: var(--sidebar-top);
+		left: max(0px, calc((100vw - 100rem) / 2));
 		flex-direction: column;
 		justify-content: space-between;
-		min-height: calc(100svh - 12rem);
+		width: 15rem;
+		height: calc(100svh - var(--sidebar-top));
 		padding: 1.5rem 1.25rem;
 		border-right: 1px solid #000;
+		overflow-y: auto;
+	}
+
+	.layout > main {
+		grid-column: 2;
 	}
 
 	.section-label,
@@ -310,12 +449,12 @@
 		color: #0f62fe;
 	}
 
-	nav {
+	.sidebar nav {
 		margin-top: 1rem;
 		border-top: 1px solid #000;
 	}
 
-	nav a {
+	.sidebar nav a {
 		display: flex;
 		gap: 1rem;
 		padding: 0.75rem 0;
@@ -324,12 +463,12 @@
 		text-decoration: none;
 	}
 
-	nav a span,
+	.sidebar nav a span,
 	.project-id {
 		color: #0f62fe;
 	}
 
-	nav a:hover,
+	.sidebar nav a:hover,
 	.text-link:hover,
 	.contact-link:hover {
 		color: #0f62fe;
@@ -512,27 +651,31 @@
 
 		.sidebar {
 			display: block;
+			position: static;
+			left: auto;
+			height: auto;
 			min-height: auto;
 			padding: 1.25rem;
 			border-right: 0;
 			border-bottom: 1px solid #000;
+			overflow: visible;
 		}
 
 		.sidebar-meta {
 			display: none;
 		}
 
-		nav {
+		.sidebar nav {
 			display: grid;
 			grid-template-columns: repeat(2, minmax(0, 1fr));
 		}
 
-		nav a {
+		.sidebar nav a {
 			padding-right: 0.75rem;
 			border-right: 1px solid #000;
 		}
 
-		nav a:nth-child(even) {
+		.sidebar nav a:nth-child(even) {
 			padding-left: 0.75rem;
 			border-right: 0;
 		}
