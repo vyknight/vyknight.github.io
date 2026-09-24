@@ -5,6 +5,7 @@
 
 	let { children } = $props();
 	let wordmarkReady = $state(false);
+	let siteReady = $state(false);
 	let wordmarkElement: HTMLHeadingElement;
 	let headerElement: HTMLElement;
 	let sidebarTop = $state(0);
@@ -79,6 +80,8 @@
 		let destroyed = false;
 		let cleanup: (() => void) | undefined;
 		let revealTimer: number | undefined;
+		let readyFrame: number | undefined;
+		let settledFrame: number | undefined;
 
 		void (async () => {
 			try {
@@ -97,21 +100,29 @@
 
 				cleanup = instance.destroy;
 				wordmarkReady = true;
+				readyFrame = requestAnimationFrame(() => {
+					settledFrame = requestAnimationFrame(() => {
+						siteReady = true;
+					});
+				});
 				revealTimer = window.setTimeout(() => instance.reveal(), 750);
 			} catch {
 				// Keep the readable text fallback when enhancement is unavailable.
+				siteReady = true;
 			}
 		})();
 
 		return () => {
 			destroyed = true;
 			if (revealTimer) window.clearTimeout(revealTimer);
+			if (readyFrame) cancelAnimationFrame(readyFrame);
+			if (settledFrame) cancelAnimationFrame(settledFrame);
 			cleanup?.();
 		};
 	});
 </script>
 
-<div class="site-shell" style={`--sidebar-top: ${sidebarTop}px`}>
+<div class:site-ready={siteReady} class="site-shell" style={`--sidebar-top: ${sidebarTop}px`}>
 	<header class="site-header" bind:this={headerElement}>
 		<h1 class:wordmark-loading={!wordmarkReady} class="wordmark" bind:this={wordmarkElement}>
 			刘ZEKUN
