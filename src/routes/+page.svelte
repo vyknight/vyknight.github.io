@@ -35,7 +35,7 @@
 		};
 
 		const animate = () => {
-			phi += 0.004;
+			phi -= 0.004;
 			globe.update({ phi });
 			animationFrame = requestAnimationFrame(animate);
 		};
