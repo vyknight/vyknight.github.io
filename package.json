@@ -20,6 +20,7 @@
     "node": ">=18.13"
   },
   "dependencies": {
+    "cobe": "^2.0.1",
     "scanlined": "^1.0.0"
   }
 }
