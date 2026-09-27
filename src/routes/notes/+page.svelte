@@ -15,5 +15,4 @@
 		Architecture notes will collect decisions about system shape, constraints, and implementation
 		tradeoffs.
 	</p>
-	<a class="text-link" href="/contact">View contact endpoint <span>→</span></a>
 </section>

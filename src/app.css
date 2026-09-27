@@ -87,6 +87,18 @@ a {
 	position: relative;
 	height: calc(100svh - var(--sidebar-top));
 	overflow: hidden;
+	opacity: 0;
+}
+
+.site-ready .globe-page {
+	animation: globe-fade-in var(--header-scan-duration) ease var(--header-scan-delay) both;
+}
+
+.globe-frame {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	transform: rotate(-10deg) scale(1.1);
 }
 
 .globe-page canvas {
@@ -97,7 +109,7 @@ a {
 
 .orbit-ring {
 	position: absolute;
-	inset: -2%;
+	inset: -2% -14%;
 	pointer-events: none;
 	z-index: 1;
 }
@@ -107,7 +119,6 @@ a {
 	height: 100%;
 	-webkit-transform: rotateX(62deg);
 	transform: rotateX(62deg);
-	animation: orbit-fade-in 1.7s ease 0.5s both;
 }
 
 .orbit-text {
@@ -120,7 +131,7 @@ a {
 	text-transform: uppercase;
 }
 
-/* @keyframes orbit-fade-in {
+@keyframes globe-fade-in {
 	from {
 		opacity: 0;
 	}
@@ -128,7 +139,7 @@ a {
 	to {
 		opacity: 1;
 	}
-} */
+}
 
 .section-label,
 .path,
@@ -187,7 +198,6 @@ a {
 	text-decoration: none;
 }
 
-.directory-link span,
 .project-id {
 	color: #0f62fe;
 }
@@ -260,6 +270,16 @@ a {
 
 .sidebar-meta dd {
 	font-weight: 600;
+}
+
+.sidebar-meta a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.sidebar-meta a:hover,
+.sidebar-meta a:focus-visible {
+	color: #0f62fe;
 }
 
 .intro,
@@ -340,6 +360,16 @@ h2 {
 	gap: 1rem;
 	padding: 1.5rem 0;
 	border-bottom: 1px solid #000;
+}
+
+.project-link {
+	color: inherit;
+	text-decoration: none;
+}
+
+.project-link:hover h3,
+.project-link:focus-visible h3 {
+	color: #0f62fe;
 }
 
 .project h3 {

@@ -9,11 +9,12 @@
 	let wordmarkElement: HTMLHeadingElement;
 	let headerElement: HTMLElement;
 	let sidebarTop = $state(0);
+	const headerScanDelay = 250;
+	const headerScanDuration = 1200;
 
 	const navigation = [
 		{
-			id: '01',
-			label: 'Overview',
+			label: 'About',
 			href: '/',
 			items: [
 				{ label: 'Introduction', href: '/overview/introduction' },
@@ -21,31 +22,24 @@
 			]
 		},
 		{
-			id: '02',
-			label: 'Selected work',
+			label: 'Work',
 			href: '/work',
 			items: [
-				{ label: 'Scanlined', href: '/work/scanlined' },
 				{ label: 'Portfolio system', href: '/work/portfolio-system' },
 				{ label: 'In progress', href: '/work/in-progress' }
 			]
 		},
 		{
-			id: '03',
+			label: 'Projects',
+			href: '/projects',
+			items: [{ label: 'Scanlined', href: '/projects/scanlined' }]
+		},
+		{
 			label: 'Notes',
 			href: '/notes',
 			items: [
 				{ label: 'Working log', href: '/notes/working-log' },
 				{ label: 'Architecture', href: '/notes/architecture' }
-			]
-		},
-		{
-			id: '04',
-			label: 'Contact',
-			href: '/contact',
-			items: [
-				{ label: 'GitHub', href: 'https://github.com/vyknight' },
-				{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/matthewzekunliu/' }
 			]
 		}
 	];
@@ -58,7 +52,12 @@
 		glyphSpacing: 0,
 		trigger: 'manual',
 		raster: { resolution: 13, threshold: 0.5, blockFit: 'advance' },
-		animation: { duration: 1800, stagger: 0, direction: 'sweep-right', sweepScope: 'glyph' }
+		animation: {
+			duration: headerScanDuration,
+			stagger: 0,
+			direction: 'sweep-right',
+			sweepScope: 'glyph'
+		}
 	} satisfies ScanlineActionOptions;
 
 	onMount(() => {
@@ -103,9 +102,9 @@
 				readyFrame = requestAnimationFrame(() => {
 					settledFrame = requestAnimationFrame(() => {
 						siteReady = true;
+						revealTimer = window.setTimeout(() => instance.reveal(), headerScanDelay);
 					});
 				});
-				revealTimer = window.setTimeout(() => instance.reveal(), 750);
 			} catch {
 				// Keep the readable text fallback when enhancement is unavailable.
 				siteReady = true;
@@ -122,7 +121,11 @@
 	});
 </script>
 
-<div class:site-ready={siteReady} class="site-shell" style={`--sidebar-top: ${sidebarTop}px`}>
+<div
+	class:site-ready={siteReady}
+	class="site-shell"
+	style={`--sidebar-top: ${sidebarTop}px; --header-scan-delay: ${headerScanDelay}ms; --header-scan-duration: ${headerScanDuration}ms`}
+>
 	<header class="site-header" bind:this={headerElement}>
 		<h1 class:wordmark-loading={!wordmarkReady} class="wordmark" bind:this={wordmarkElement}>
 			刘ZEKUN
@@ -137,7 +140,6 @@
 					{#each navigation as item}
 						<div class="directory-item">
 							<a class="directory-link" href={item.href}>
-								<span>{item.id}</span>
 								{item.label}
 							</a>
 							<div class="directory-panel">
@@ -160,11 +162,25 @@
 			</div>
 
 			<div class="sidebar-meta">
-				<p class="section-label">System</p>
+				<p class="section-label">Contacts</p>
 				<dl>
-					<div><dt>STATUS</dt><dd>AVAILABLE</dd></div>
-					<div><dt>STACK</dt><dd>SVELTE / TS</dd></div>
-					<div><dt>BUILD</dt><dd>STATIC</dd></div>
+					<!-- <div><dt>STATUS</dt><dd>AVAILABLE</dd></div> -->
+					<!-- <div><dt>STACK</dt><dd>SVELTE / TS</dd></div> -->
+					<!-- <div><dt>BUILD</dt><dd>STATIC</dd></div> -->
+					<div>
+						<dd>
+							<a href="https://github.com/vyknight" rel="noreferrer" target="_blank">GITHUB</a>
+						</dd>
+					</div>
+					<div>
+						<dd>
+							<a
+								href="https://www.linkedin.com/in/matthewzekunliu/"
+								rel="noreferrer"
+								target="_blank">LINKEDIN</a
+							>
+						</dd>
+					</div>
 				</dl>
 			</div>
 		</aside>

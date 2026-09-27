@@ -3,7 +3,7 @@
 </svelte:head>
 
 <section class="content-section">
-	<p class="path">~/work/scanlined</p>
+	<p class="path">~/projects/scanlined</p>
 	<p class="kicker">02.01 — CASE STUDY</p>
 	<h2>Scanlined</h2>
 	<p class="detail-summary">
