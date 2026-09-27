@@ -33,6 +33,10 @@ a {
 }
 
 .site-header {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: clamp(1.5rem, 4vw, 4rem);
 	padding: clamp(1rem, 2vw, 1.625rem) clamp(1.75rem, 3vw, 3rem) 0 1.25rem;
 	border-bottom: 1px solid #000;
 }
@@ -57,6 +61,37 @@ a {
 
 .wordmark-loading {
 	visibility: hidden;
+}
+
+.header-coordinates {
+	display: grid;
+	gap: 0.75rem;
+	flex: none;
+	margin: 0 0 clamp(1rem, 2vw, 1.625rem) auto;
+	visibility: hidden;
+	text-align: right;
+}
+
+.header-coordinates.coordinate-ticker-ready {
+	visibility: visible;
+}
+
+.header-coordinate {
+	width: 21ch;
+	min-width: 21ch;
+	margin: 0;
+	color: #000;
+	font-size: 1.2rem;
+	font-weight: 600;
+	font-variant-numeric: tabular-nums;
+	letter-spacing: 0.06em;
+	line-height: 1.2;
+	white-space: nowrap;
+	pointer-events: none;
+}
+
+.header-coordinate .scanlined-cover {
+	white-space: nowrap !important;
 }
 
 .app-layout {
@@ -505,6 +540,21 @@ h2 {
 @media (max-width: 52rem) {
 	.site-shell {
 		border-inline: 0;
+	}
+
+	.site-header {
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	.header-coordinates {
+		width: 100%;
+		gap: 0.5rem;
+	}
+
+	.header-coordinate {
+		min-width: 0;
+		font-size: clamp(0.703125rem, 2.25vw, 0.9375rem);
 	}
 
 	.app-layout {
