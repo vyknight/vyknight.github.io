@@ -3,7 +3,6 @@
 </svelte:head>
 
 <section class="content-section">
-	<p class="path">~/work/in-progress</p>
 	<p class="kicker">02.03 — IN PROGRESS</p>
 	<h2>Reserved for work still taking shape.</h2>
 	<p class="detail-summary">

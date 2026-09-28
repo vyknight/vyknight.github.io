@@ -3,7 +3,6 @@
 </svelte:head>
 
 <section class="content-section">
-	<p class="path">~/work/portfolio-system</p>
 	<p class="kicker">02.02 — CASE STUDY</p>
 	<h2>Portfolio system</h2>
 	<p class="detail-summary">

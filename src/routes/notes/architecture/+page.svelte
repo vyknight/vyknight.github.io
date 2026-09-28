@@ -3,7 +3,6 @@
 </svelte:head>
 
 <section class="content-section">
-	<p class="path">~/notes/architecture</p>
 	<p class="kicker">03.02 — ARCHITECTURE</p>
 	<h2>Decisions that shape the system.</h2>
 	<p class="detail-summary">

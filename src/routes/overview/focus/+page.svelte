@@ -3,7 +3,6 @@
 </svelte:head>
 
 <section class="content-section">
-	<p class="path">~/overview/focus</p>
 	<p class="kicker">01.02 — FOCUS</p>
 	<h2>Make complex systems easier to read.</h2>
 	<p class="detail-summary">

@@ -1,8 +1,8 @@
 <svelte:head>
-	<title>Vyknight — Introduction</title>
+	<title>Vyknight — About</title>
 </svelte:head>
 
-<section class="content-section">
+<section class="content-section about-page">
 	<p class="kicker">01.01 — INTRODUCTION</p>
 	<h2>A place to document how things are made.</h2>
 	<p class="detail-summary">
@@ -10,10 +10,8 @@
 		specific principles, artifacts, or decisions that support it.
 	</p>
 
-	<dl class="detail-meta">
-		<div><dt>TYPE</dt><dd>Profile note</dd></div>
-		<div><dt>STATUS</dt><dd>Living document</dd></div>
-		<div><dt>UPDATED</dt><dd>2026</dd></div>
+	<dl class="detail-meta about-meta">
+		<div><dt>DATE</dt><dd>2026</dd></div>
 	</dl>
 
 	<div class="detail-grid">
@@ -23,7 +21,7 @@
 		</div>
 		<div class="detail-block">
 			<h3>How to extend it</h3>
-			<p>Add a new nested route when a topic needs more depth than the top-level overview page.</p>
+			<p>Add a new nested route when a topic needs more depth than the top-level About page.</p>
 		</div>
 	</div>
 </section>

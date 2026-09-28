@@ -24,7 +24,7 @@
 	const coordinateLocations = [
 		'54.000  166.500', // Shadow Moses
 		'40.580  073.750', // Big Shell
-		'40.707  074.010', // Federal Hall ("Liberty Hall")
+		'40.707  074.010', // Federal Hall
 		'19.918  075.160', // Camp Omega
 		'34.983  033.750', // Dhekelia SBA Memorial Hospital, Cyprus
 		'34.555  069.207', // Northern Kabul, Afghanistan
@@ -48,9 +48,9 @@
 	const navigation = [
 		{
 			label: 'About',
-			href: '/',
+			href: '/about',
 			items: [
-				{ label: 'Introduction', href: '/overview/introduction' },
+				{ label: 'Introduction', href: '/about' },
 				{ label: 'Focus', href: '/overview/focus' }
 			]
 		},
@@ -74,6 +74,11 @@
 				{ label: 'Working log', href: '/notes/working-log' },
 				{ label: 'Architecture', href: '/notes/architecture' }
 			]
+		},
+		{
+			label: 'Resume',
+			href: '/resume',
+			items: []
 		}
 	];
 
@@ -356,20 +361,22 @@
 							<a class="directory-link" href={item.href}>
 								{item.label}
 							</a>
-							<div class="directory-panel">
-								<div class="directory-panel-inner">
-									{#each item.items as child}
-										<a
-											class="directory-child"
-											href={child.href}
-											rel={child.href.startsWith('http') ? 'noreferrer' : undefined}
-											target={child.href.startsWith('http') ? '_blank' : undefined}
-										>
-											{child.label}
-										</a>
-									{/each}
+							{#if item.items.length > 0}
+								<div class="directory-panel">
+									<div class="directory-panel-inner">
+										{#each item.items as child}
+											<a
+												class="directory-child"
+												href={child.href}
+												rel={child.href.startsWith('http') ? 'noreferrer' : undefined}
+												target={child.href.startsWith('http') ? '_blank' : undefined}
+											>
+												{child.label}
+											</a>
+										{/each}
+									</div>
 								</div>
-							</div>
+							{/if}
 						</div>
 					{/each}
 				</nav>
