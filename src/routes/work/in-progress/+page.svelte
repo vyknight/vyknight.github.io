@@ -1,7 +1,3 @@
-<svelte:head>
-	<title>Vyknight — In Progress</title>
-</svelte:head>
-
 <section class="content-section">
 	<p class="kicker">02.03 — IN PROGRESS</p>
 	<h2>Reserved for work still taking shape.</h2>

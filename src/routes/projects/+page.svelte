@@ -1,7 +1,3 @@
-<svelte:head>
-	<title>Vyknight — Projects</title>
-</svelte:head>
-
 <section class="content-section">
 	<div class="section-heading">
 		<p class="kicker">PROJECTS</p>

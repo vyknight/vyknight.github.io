@@ -1,7 +1,3 @@
-<svelte:head>
-	<title>Vyknight — Scanlined</title>
-</svelte:head>
-
 <section class="content-section">
 	<p class="kicker">02.01 — CASE STUDY</p>
 	<h2>Scanlined</h2>

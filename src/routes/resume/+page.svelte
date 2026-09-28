@@ -1,7 +1,3 @@
-<svelte:head>
-	<title>Vyknight — Resume</title>
-</svelte:head>
-
 <section class="content-section">
 	<p class="kicker">RESUME</p>
 	<h2>Experience and capabilities.</h2>

@@ -1,7 +1,3 @@
-<svelte:head>
-	<title>Vyknight — About</title>
-</svelte:head>
-
 <section class="content-section about-page">
 	<p class="kicker">01.01 — INTRODUCTION</p>
 	<h2>A place to document how things are made.</h2>

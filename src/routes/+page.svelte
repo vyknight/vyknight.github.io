@@ -53,7 +53,6 @@
 </script>
 
 <svelte:head>
-	<title>Zekun Liu - Portfolio</title>
 	<meta name="description" content="A technical portfolio of software, systems, and experiments." />
 </svelte:head>
 

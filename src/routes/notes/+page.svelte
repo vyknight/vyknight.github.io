@@ -1,7 +1,3 @@
-<svelte:head>
-	<title>Vyknight — Notes</title>
-</svelte:head>
-
 <section class="content-section" id="working-log">
 	<div class="section-heading">
 		<p class="kicker">03 — NOTES</p>

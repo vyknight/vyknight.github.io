@@ -1,7 +1,3 @@
-<svelte:head>
-	<title>Vyknight — Working Log</title>
-</svelte:head>
-
 <section class="content-section">
 	<p class="kicker">03.01 — WORKING LOG</p>
 	<h2>Small observations, kept close to the work.</h2>

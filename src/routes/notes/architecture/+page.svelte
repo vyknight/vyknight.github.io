@@ -1,7 +1,3 @@
-<svelte:head>
-	<title>Vyknight — Architecture Notes</title>
-</svelte:head>
-
 <section class="content-section">
 	<p class="kicker">03.02 — ARCHITECTURE</p>
 	<h2>Decisions that shape the system.</h2>

@@ -27,10 +27,6 @@
 	];
 </script>
 
-<svelte:head>
-	<title>Vyknight — Selected Work</title>
-</svelte:head>
-
 <section class="content-section">
 	<div class="section-heading">
 		<p class="kicker">02 — SELECTED WORK</p>

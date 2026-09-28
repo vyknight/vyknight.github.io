@@ -1,7 +1,3 @@
-<svelte:head>
-	<title>Vyknight — Portfolio System</title>
-</svelte:head>
-
 <section class="content-section">
 	<p class="kicker">02.02 — CASE STUDY</p>
 	<h2>Portfolio system</h2>

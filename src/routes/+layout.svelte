@@ -331,6 +331,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Zekun Liu - Portfolio</title>
+</svelte:head>
+
 <div
 	class:site-ready={siteReady}
 	class="site-shell"
