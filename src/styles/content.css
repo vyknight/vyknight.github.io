@@ -171,6 +171,17 @@
 	margin-bottom: 0;
 }
 
+.detail-section a {
+	color: var(--color-accent);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.2em;
+}
+
+.detail-section a:hover,
+.detail-section a:focus-visible {
+	color: var(--color-foreground);
+}
+
 .detail-section p,
 .detail-section li {
 	font-size: 0.8125rem;
@@ -180,6 +191,10 @@
 .detail-section ul {
 	margin: 0;
 	padding-left: 1.2rem;
+}
+
+.detail-section ul + p {
+	margin-top: 1rem;
 }
 
 .project-list {

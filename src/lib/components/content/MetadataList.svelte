@@ -3,7 +3,7 @@
 
 	let {
 		items,
-		layout = 'grid'
+		layout = 'row'
 	}: {
 		items: readonly MetadataItem[];
 		layout?: MetadataLayout;

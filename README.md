@@ -36,7 +36,9 @@ A typical detail route keeps its editable content near the top:
 	const sections = [
 		{
 			heading: 'Section title',
-			paragraphs: ['First paragraph.', 'Second paragraph.']
+			paragraphs: ['Opening paragraph.'],
+			bullets: ['First item', 'Second item'],
+			paragraphsAfterBullets: ['Paragraph after the list.']
 		}
 	];
 </script>

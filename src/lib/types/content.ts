@@ -5,10 +5,18 @@ export interface MetadataItem {
 	value: string;
 }
 
+export interface DetailTextSegment {
+	text: string;
+	href?: string;
+}
+
+export type DetailParagraph = string | readonly DetailTextSegment[];
+
 export interface DetailSection {
 	heading?: string;
-	paragraphs?: readonly string[];
+	paragraphs?: readonly DetailParagraph[];
 	bullets?: readonly string[];
+	paragraphsAfterBullets?: readonly DetailParagraph[];
 }
 
 export interface ProjectSummary {

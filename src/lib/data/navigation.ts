@@ -5,8 +5,8 @@ export const NAVIGATION_SECTIONS: readonly NavigationSection[] = [
 		label: 'About',
 		href: '/about',
 		children: [
-			{ label: 'Introduction', href: '/about' },
-			{ label: 'Focus', href: '/overview/focus' }
+			{ label: 'THIS WEBSITE', href: '/about' },
+			{ label: 'ME', href: '/about/about-me' }
 		]
 	},
 	{
