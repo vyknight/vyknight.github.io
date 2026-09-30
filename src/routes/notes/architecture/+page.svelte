@@ -1,25 +1,35 @@
-<section class="content-section">
-	<p class="kicker">03.02 — ARCHITECTURE</p>
-	<h2>Decisions that shape the system.</h2>
-	<p class="detail-summary">
-		Architecture notes explain the constraints and tradeoffs behind a system so future changes
-		have useful context.
-	</p>
+<script lang="ts">
+	import {
+		ContentHeader,
+		ContentPage,
+		DetailSections,
+		MetadataList
+	} from '$lib/components/content';
 
-	<dl class="detail-meta">
-		<div><dt>FORMAT</dt><dd>Decision record</dd></div>
-		<div><dt>AUDIENCE</dt><dd>Future maintainers</dd></div>
-		<div><dt>SCOPE</dt><dd>One decision</dd></div>
-	</dl>
+	const metadata = [
+		{ label: 'FORMAT', value: 'Decision record' },
+		{ label: 'AUDIENCE', value: 'Future maintainers' },
+		{ label: 'SCOPE', value: 'One decision' }
+	];
 
-	<div class="detail-grid">
-		<div class="detail-block">
-			<h3>Context</h3>
-			<p>State the problem, its constraints, and the alternatives that were realistically available.</p>
-		</div>
-		<div class="detail-block">
-			<h3>Decision</h3>
-			<p>Record what was chosen, why it was chosen, and what consequences it introduces.</p>
-		</div>
-	</div>
-</section>
+	const sections = [
+		{
+			heading: 'Context',
+			paragraphs: ['State the problem, its constraints, and the alternatives that were realistically available.']
+		},
+		{
+			heading: 'Decision',
+			paragraphs: ['Record what was chosen, why it was chosen, and what consequences it introduces.']
+		}
+	];
+</script>
+
+<ContentPage>
+	<ContentHeader
+		eyebrow="03.02 — ARCHITECTURE"
+		title="Decisions that shape the system."
+		summary="Architecture notes explain the constraints and tradeoffs behind a system so future changes have useful context."
+	/>
+	<MetadataList items={metadata} layout="inline" />
+	<DetailSections {sections} />
+</ContentPage>

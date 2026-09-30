@@ -1,23 +1,32 @@
-<section class="content-section about-page">
-	<p class="kicker">01.01 — INTRODUCTION</p>
-	<h2>A place to document how things are made.</h2>
-	<p class="detail-summary">
-		This page is an example of a nested overview entry: concise context first, followed by the
-		specific principles, artifacts, or decisions that support it.
-	</p>
+<script lang="ts">
+	import {
+		ContentHeader,
+		ContentPage,
+		DetailSections,
+		MetadataList
+	} from '$lib/components/content';
 
-	<dl class="detail-meta about-meta">
-		<div><dt>DATE</dt><dd>2026</dd></div>
-	</dl>
+	const metadata = [
+		{ label: 'CREATED', value: 'AUTUMN 2026' },
+		{ label: 'UPDATED', value: 'AUTUMN 2026' }
+	];
 
-	<div class="detail-grid">
-		<div class="detail-block">
-			<h3>What belongs here</h3>
-			<p>Short statements of intent, operating principles, and the kinds of problems worth solving.</p>
-		</div>
-		<div class="detail-block">
-			<h3>How to extend it</h3>
-			<p>Add a new nested route when a topic needs more depth than the top-level About page.</p>
-		</div>
-	</div>
-</section>
+	const sections = [
+		{
+			paragraphs: [
+				'This is the portfolio website for Zekun Liu, I also go by Matthew Liu at times.',
+				'Here you\'ll find information pertaining to my career as a software engineer. Detailed breakdowns of my technical projects, vague descriptions of my professional work, and my resume, and my blog, and whatnot will be found to the bar to your left.'
+			]
+		},
+	];
+</script>
+
+<ContentPage>
+	<ContentHeader
+		eyebrow="01.01 — START HERE"
+		title="THIS WEBSITE"
+		// summary="This page is an example of a nested overview entry: concise context first, followed by the specific principles, artifacts, or decisions that support it."
+	/>
+	<MetadataList items={metadata} layout="row" />
+	<DetailSections {sections} />
+</ContentPage>

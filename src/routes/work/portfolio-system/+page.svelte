@@ -1,25 +1,35 @@
-<section class="content-section">
-	<p class="kicker">02.02 — CASE STUDY</p>
-	<h2>Portfolio system</h2>
-	<p class="detail-summary">
-		This site is structured as a durable technical index: a persistent shell, category landing
-		pages, and nested routes for details that grow over time.
-	</p>
+<script lang="ts">
+	import {
+		ContentHeader,
+		ContentPage,
+		DetailSections,
+		MetadataList
+	} from '$lib/components/content';
 
-	<dl class="detail-meta">
-		<div><dt>TYPE</dt><dd>Static website</dd></div>
-		<div><dt>STACK</dt><dd>SvelteKit</dd></div>
-		<div><dt>DEPLOY</dt><dd>GitHub Pages</dd></div>
-	</dl>
+	const metadata = [
+		{ label: 'TYPE', value: 'Static website' },
+		{ label: 'STACK', value: 'SvelteKit' },
+		{ label: 'DEPLOY', value: 'GitHub Pages' }
+	];
 
-	<div class="detail-grid">
-		<div class="detail-block">
-			<h3>Structure</h3>
-			<p>Header and directory live in the root layout; content routes can evolve independently.</p>
-		</div>
-		<div class="detail-block">
-			<h3>Navigation</h3>
-			<p>Top-level pages are categories, while the accordion exposes their child documents.</p>
-		</div>
-	</div>
-</section>
+	const sections = [
+		{
+			heading: 'Structure',
+			paragraphs: ['Header and directory live in the root layout; content routes can evolve independently.']
+		},
+		{
+			heading: 'Navigation',
+			paragraphs: ['Top-level pages are categories, while the accordion exposes their child documents.']
+		}
+	];
+</script>
+
+<ContentPage>
+	<ContentHeader
+		eyebrow="02.02 — CASE STUDY"
+		title="Portfolio system"
+		summary="This site is structured as a durable technical index: a persistent shell, category landing pages, and nested routes for details that grow over time."
+	/>
+	<MetadataList items={metadata} layout="inline" />
+	<DetailSections {sections} />
+</ContentPage>

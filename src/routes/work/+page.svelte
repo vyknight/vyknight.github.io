@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { ContentPage, IndexHeader, ProjectList } from '$lib/components/content';
+	import { formatEntryCount } from '$lib/utils/format-entry-count';
+
 	const projects = [
 		{
 			id: '01',
@@ -6,7 +9,8 @@
 			type: 'Open-source library',
 			description:
 				'An animated text renderer that turns glyphs into selectable scanline blocks for the web.',
-			stack: 'TypeScript · SVG · Svelte action'
+			stack: 'TypeScript · SVG · Svelte action',
+			anchorId: 'scanlined'
 		},
 		{
 			id: '02',
@@ -14,7 +18,8 @@
 			type: 'Web system',
 			description:
 				'A deliberately small SvelteKit site designed as a living index of technical work.',
-			stack: 'SvelteKit · Static export · GitHub Pages'
+			stack: 'SvelteKit · Static export · GitHub Pages',
+			anchorId: 'portfolio-system'
 		},
 		{
 			id: '03',
@@ -22,37 +27,13 @@
 			type: 'In progress',
 			description:
 				'Reserve this slot for a case study, experiment, or system worth documenting in full.',
-			stack: 'Add project metadata'
+			stack: 'Add project metadata',
+			anchorId: 'in-progress'
 		}
 	];
 </script>
 
-<section class="content-section">
-	<div class="section-heading">
-		<p class="kicker">02 — SELECTED WORK</p>
-		<p class="count">03 ENTRIES</p>
-	</div>
-
-	<div class="project-list">
-		{#each projects as project}
-			<article
-				class="project"
-				id={project.id === '01'
-					? 'scanlined'
-					: project.id === '02'
-						? 'portfolio-system'
-						: 'in-progress'}
-			>
-				<p class="project-id">{project.id}</p>
-				<div>
-					<p class="project-type">{project.type}</p>
-					<h3>{project.title}</h3>
-				</div>
-				<div class="project-detail">
-					<p>{project.description}</p>
-					<span>{project.stack}</span>
-				</div>
-			</article>
-		{/each}
-	</div>
-</section>
+<ContentPage>
+	<IndexHeader eyebrow="02 — SELECTED WORK" count={formatEntryCount(projects.length)} />
+	<ProjectList {projects} />
+</ContentPage>

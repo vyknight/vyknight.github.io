@@ -1,29 +1,39 @@
-<section class="content-section">
-	<p class="kicker">02.01 — CASE STUDY</p>
-	<h2>Scanlined</h2>
-	<p class="detail-summary">
-		An animated text renderer that begins as a field of bars and resolves into selectable,
-		accessible letterforms.
-	</p>
+<script lang="ts">
+	import {
+		ContentHeader,
+		ContentPage,
+		DetailSections,
+		MetadataList
+	} from '$lib/components/content';
 
-	<dl class="detail-meta">
-		<div><dt>ROLE</dt><dd>Design + engineering</dd></div>
-		<div><dt>STACK</dt><dd>TypeScript / SVG</dd></div>
-		<div><dt>STATE</dt><dd>Open source</dd></div>
-	</dl>
+	const metadata = [
+		{ label: 'ROLE', value: 'Design + engineering' },
+		{ label: 'STACK', value: 'TypeScript / SVG' },
+		{ label: 'STATE', value: 'Open source' }
+	];
 
-	<div class="detail-grid">
-		<div class="detail-block">
-			<h3>Problem</h3>
-			<p>Most display effects sacrifice selection, accessibility, or clear rendering control.</p>
-		</div>
-		<div class="detail-block">
-			<h3>Approach</h3>
-			<p>Rasterize text into a compact grid, build horizontal bar geometry, then animate its reveal.</p>
-		</div>
-		<div class="detail-block">
-			<h3>Outcome</h3>
-			<p>The effect works as a framework-agnostic core with a small Svelte integration layer.</p>
-		</div>
-	</div>
-</section>
+	const sections = [
+		{
+			heading: 'Problem',
+			paragraphs: ['Most display effects sacrifice selection, accessibility, or clear rendering control.']
+		},
+		{
+			heading: 'Approach',
+			paragraphs: ['Rasterize text into a compact grid, build horizontal bar geometry, then animate its reveal.']
+		},
+		{
+			heading: 'Outcome',
+			paragraphs: ['The effect works as a framework-agnostic core with a small Svelte integration layer.']
+		}
+	];
+</script>
+
+<ContentPage>
+	<ContentHeader
+		eyebrow="02.01 — CASE STUDY"
+		title="Scanlined"
+		summary="An animated text renderer that begins as a field of bars and resolves into selectable, accessible letterforms."
+	/>
+	<MetadataList items={metadata} layout="inline" />
+	<DetailSections {sections} />
+</ContentPage>

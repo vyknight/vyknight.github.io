@@ -1,23 +1,27 @@
-<section class="content-section">
-	<p class="kicker">01.02 — FOCUS</p>
-	<h2>Make complex systems easier to read.</h2>
-	<p class="detail-summary">
-		A focused overview page can capture an ongoing area of interest without needing to become a
-		full project case study.
-	</p>
+<script lang="ts">
+	import { ContentHeader, ContentPage, DetailSections } from '$lib/components/content';
 
-	<div class="detail-grid">
-		<div class="detail-block">
-			<h3>Current themes</h3>
-			<ul>
-				<li>Legible technical interfaces</li>
-				<li>Small tools with clear constraints</li>
-				<li>Documentation as a product surface</li>
-			</ul>
-		</div>
-		<div class="detail-block">
-			<h3>Related work</h3>
-			<p>Link outward to concrete projects, notes, experiments, or a chronological working log.</p>
-		</div>
-	</div>
-</section>
+	const sections = [
+		{
+			heading: 'Current themes',
+			bullets: [
+				'Legible technical interfaces',
+				'Small tools with clear constraints',
+				'Documentation as a product surface'
+			]
+		},
+		{
+			heading: 'Related work',
+			paragraphs: ['Link outward to concrete projects, notes, experiments, or a chronological working log.']
+		}
+	];
+</script>
+
+<ContentPage>
+	<ContentHeader
+		eyebrow="01.02 — FOCUS"
+		title="Make complex systems easier to read."
+		summary="A focused overview page can capture an ongoing area of interest without needing to become a full project case study."
+	/>
+	<DetailSections {sections} />
+</ContentPage>
