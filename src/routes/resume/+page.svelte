@@ -5,7 +5,7 @@
 <ContentPage>
 	<ContentHeader
 		eyebrow="RESUME"
-		title="Experience and capabilities."
-		summary="A concise record of roles, technical work, and the systems built along the way."
+		title="Curriculum Vitae"
+		summary="ILL UPDATE THIS PAGE ONCE I UPDATE THE RESUME"
 	/>
 </ContentPage>

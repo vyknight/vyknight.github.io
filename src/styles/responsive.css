@@ -66,9 +66,17 @@
 		grid-template-columns: 2.5rem 1fr;
 	}
 
+	.project-list-item--without-id {
+		grid-template-columns: 1fr;
+	}
+
 	.project-list-item__details {
 		grid-column: 2;
 		margin-top: 1.25rem;
+	}
+
+	.project-list-item--without-id .project-list-item__details {
+		grid-column: 1;
 	}
 
 	.metadata-list {

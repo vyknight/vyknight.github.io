@@ -9,23 +9,40 @@
 </script>
 
 {#snippet content()}
-	<p class="project-list-item__id">{project.id}</p>
-	<div>
-		<p class="project-list-item__type">{project.type}</p>
+	{#if project.id}
+		<p class="project-list-item__id">{project.id}</p>
+	{/if}
+	<div class="project-list-item__title">
+		{#if project.type}
+			<p class="project-list-item__type">{project.type}</p>
+		{/if}
 		<h3>{project.title}</h3>
 	</div>
-	<div class="project-list-item__details">
+	<div
+		class:project-list-item__details--centered={!project.stack}
+		class="project-list-item__details"
+	>
 		<p>{project.description}</p>
-		<span>{project.stack}</span>
+		{#if project.stack}
+			<span>{project.stack}</span>
+		{/if}
 	</div>
 {/snippet}
 
 {#if project.href}
-	<a class="project-list-item project-list-item--link" href={project.href}>
+	<a
+		class:project-list-item--without-id={!project.id}
+		class="project-list-item project-list-item--link"
+		href={project.href}
+	>
 		{@render content()}
 	</a>
 {:else}
-	<article class="project-list-item" id={project.anchorId}>
+	<article
+		class:project-list-item--without-id={!project.id}
+		class="project-list-item"
+		id={project.anchorId}
+	>
 		{@render content()}
 	</article>
 {/if}

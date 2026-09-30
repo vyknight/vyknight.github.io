@@ -20,11 +20,11 @@ export interface DetailSection {
 }
 
 export interface ProjectSummary {
-	id: string;
+	id?: string;
 	title: string;
-	type: string;
+	type?: string;
 	description: string;
-	stack: string;
+	stack?: string;
 	href?: string;
 	anchorId?: string;
 }

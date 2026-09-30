@@ -5,7 +5,7 @@ export const NAVIGATION_SECTIONS: readonly NavigationSection[] = [
 		label: 'About',
 		href: '/about',
 		children: [
-			{ label: 'THIS WEBSITE', href: '/about' },
+			{ label: 'THIS WEBSITE', href: '/about/this-website' },
 			{ label: 'ME', href: '/about/about-me' }
 		]
 	},
@@ -13,8 +13,12 @@ export const NAVIGATION_SECTIONS: readonly NavigationSection[] = [
 		label: 'Work',
 		href: '/work',
 		children: [
-			{ label: 'Portfolio system', href: '/work/portfolio-system' },
-			{ label: 'In progress', href: '/work/in-progress' }
+			{ label: 'Amazon — SWE I', href: '/work/amazon-software-engineer' },
+			{ label: 'Amazon — Intern', href: '/work/amazon-intern' },
+			{ label: 'Huawei', href: '/work/huawei' },
+			{ label: 'IBM', href: '/work/ibm' },
+			{ label: 'UNICEF', href: '/work/unicef' },
+			{ label: 'Onova', href: '/work/onova' }
 		]
 	},
 	{
