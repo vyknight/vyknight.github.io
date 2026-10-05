@@ -3,4 +3,6 @@
 	import { unicefProjectIntern } from '$lib/data/work-history';
 </script>
 
-<WorkHistoryPage entry={unicefProjectIntern} />
+<WorkHistoryPage entry={unicefProjectIntern}>
+	<p>For a semester long project.</p>
+</WorkHistoryPage>

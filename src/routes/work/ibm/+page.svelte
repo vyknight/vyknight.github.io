@@ -3,4 +3,6 @@
 	import { ibmIntern } from '$lib/data/work-history';
 </script>
 
-<WorkHistoryPage entry={ibmIntern} />
+<WorkHistoryPage entry={ibmIntern}>
+	<p>On the SkillsNetwork team.</p>
+</WorkHistoryPage>

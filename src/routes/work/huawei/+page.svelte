@@ -3,4 +3,6 @@
 	import { huaweiIntern } from '$lib/data/work-history';
 </script>
 
-<WorkHistoryPage entry={huaweiIntern} />
+<WorkHistoryPage entry={huaweiIntern}>
+	<p>On the GaussDB team.</p>
+</WorkHistoryPage>

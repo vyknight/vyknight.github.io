@@ -1,8 +1,8 @@
 <script lang="ts">
 	import {
+		ContentBody,
 		ContentHeader,
 		ContentPage,
-		DetailSections,
 		MetadataList
 	} from '$lib/components/content';
 
@@ -12,20 +12,6 @@
 		{ label: 'STATE', value: 'Open source' }
 	];
 
-	const sections = [
-		{
-			heading: 'Problem',
-			paragraphs: ['Most display effects sacrifice selection, accessibility, or clear rendering control.']
-		},
-		{
-			heading: 'Approach',
-			paragraphs: ['Rasterize text into a compact grid, build horizontal bar geometry, then animate its reveal.']
-		},
-		{
-			heading: 'Outcome',
-			paragraphs: ['The effect works as a framework-agnostic core with a small Svelte integration layer.']
-		}
-	];
 </script>
 
 <ContentPage>
@@ -35,5 +21,18 @@
 		summary="An animated text renderer that begins as a field of bars and resolves into selectable, accessible letterforms."
 	/>
 	<MetadataList items={metadata} layout="inline" />
-	<DetailSections {sections} />
+	<ContentBody>
+		<section>
+			<h3>Problem</h3>
+			<p>Most display effects sacrifice selection, accessibility, or clear rendering control.</p>
+		</section>
+		<section>
+			<h3>Approach</h3>
+			<p>Rasterize text into a compact grid, build horizontal bar geometry, then animate its reveal.</p>
+		</section>
+		<section>
+			<h3>Outcome</h3>
+			<p>The effect works as a framework-agnostic core with a small Svelte integration layer.</p>
+		</section>
+	</ContentBody>
 </ContentPage>

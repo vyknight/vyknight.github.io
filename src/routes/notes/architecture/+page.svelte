@@ -1,8 +1,8 @@
 <script lang="ts">
 	import {
+		ContentBody,
 		ContentHeader,
 		ContentPage,
-		DetailSections,
 		MetadataList
 	} from '$lib/components/content';
 
@@ -12,16 +12,6 @@
 		{ label: 'SCOPE', value: 'One decision' }
 	];
 
-	const sections = [
-		{
-			heading: 'Context',
-			paragraphs: ['State the problem, its constraints, and the alternatives that were realistically available.']
-		},
-		{
-			heading: 'Decision',
-			paragraphs: ['Record what was chosen, why it was chosen, and what consequences it introduces.']
-		}
-	];
 </script>
 
 <ContentPage>
@@ -31,5 +21,14 @@
 		summary="Architecture notes explain the constraints and tradeoffs behind a system so future changes have useful context."
 	/>
 	<MetadataList items={metadata} layout="inline" />
-	<DetailSections {sections} />
+	<ContentBody>
+		<section>
+			<h3>Context</h3>
+			<p>State the problem, its constraints, and the alternatives that were realistically available.</p>
+		</section>
+		<section>
+			<h3>Decision</h3>
+			<p>Record what was chosen, why it was chosen, and what consequences it introduces.</p>
+		</section>
+	</ContentBody>
 </ContentPage>

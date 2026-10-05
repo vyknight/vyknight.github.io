@@ -3,4 +3,6 @@
 	import { amazonSoftwareEngineer } from '$lib/data/work-history';
 </script>
 
-<WorkHistoryPage entry={amazonSoftwareEngineer} />
+<WorkHistoryPage entry={amazonSoftwareEngineer}>
+	<p>On the Chargebacks team under SCOT - OSS.</p>
+</WorkHistoryPage>
