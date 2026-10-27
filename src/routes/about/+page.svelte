@@ -14,7 +14,7 @@
 			id: '02',
 			title: 'ME',
 			// type: 'Personal profile',
-			description: 'Or Start Here.',
+			description: 'Or Here.',
 			href: '/about/about-me'
 		}
 	];
