@@ -3,6 +3,7 @@ export type MetadataLayout = 'grid' | 'inline' | 'row';
 export interface MetadataItem {
 	label: string;
 	value: string;
+	href?: string;
 }
 
 export interface ProjectSummary {

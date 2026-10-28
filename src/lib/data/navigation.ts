@@ -26,14 +26,15 @@ export const NAVIGATION_SECTIONS: readonly NavigationSection[] = [
 		href: '/projects',
 		children: [{ label: 'Scanlined', href: '/projects/scanlined' }]
 	},
-	{
-		label: 'Notes',
-		href: '/notes',
-		children: [
-			{ label: 'Working log', href: '/notes/working-log' },
-			{ label: 'Architecture', href: '/notes/architecture' }
-		]
-	},
+	// Hidden from the sidebar; /notes routes are still reachable directly.
+	// {
+	// 	label: 'Notes',
+	// 	href: '/notes',
+	// 	children: [
+	// 		{ label: 'Working log', href: '/notes/working-log' },
+	// 		{ label: 'Architecture', href: '/notes/architecture' }
+	// 	]
+	// },
 	{
 		label: 'Blog',
 		href: '/blog',

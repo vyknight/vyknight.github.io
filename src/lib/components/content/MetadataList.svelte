@@ -18,7 +18,13 @@
 	{#each items as item}
 		<div class="metadata-list__item">
 			<dt>{item.label}</dt>
-			<dd>{item.value}</dd>
+			<dd>
+				{#if item.href}
+					<a href={item.href} rel="noreferrer" target="_blank">{item.value}</a>
+				{:else}
+					{item.value}
+				{/if}
+			</dd>
 		</div>
 	{/each}
 </dl>

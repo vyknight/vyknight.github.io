@@ -48,8 +48,7 @@
 			<h3>Funwise</h3>
 			<p>
 				For a long time, my only real hobby was playing video games, but after starting full time
-				work I lost the ability to enjoy them. So here's a list of other things I've been trying
-				(though I must disclaim that I'm bad at all of them):
+				work I lost the ability to enjoy them. So here's a list of other things I've been trying:
 			</p>
 			<ul>
 				<li>Drawing.</li>
@@ -69,8 +68,7 @@
 				<li>Playing the flute.</li>
 			</ul>
 			<p>
-				Yes each of these takes skill, including smoking cigarettes, and yes I manage to be bad at
-				all of them, including smoking cigarettes.
+				To be clear I don't claim to be good at any of these.
 			</p>
 		</section>
 	</ContentBody>
